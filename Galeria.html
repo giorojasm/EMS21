@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galería - EMS.21</title>
+  <link rel="shortcut icon" href="fav.ico">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+      <span>Educación Media S21. Venecia I.E.D.</span>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#asignaturas">Asignaturas</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+        <li><a href="galeria.html" class="active">Galería</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+ 
+
+  <main class="section galeria">
+    <h2>Galería</h2>
+
+    <div class="folders">
+      <button class="folder" data-target="#album-eventos">
+        <span class="folder-icon" aria-hidden="true"></span>
+        <span class="folder-name">Eventos</span>
+      </button>
+
+      <button class="folder" data-target="#album-trabajos">
+        <span class="folder-icon" aria-hidden="true"></span>
+        <span class="folder-name">Trabajos</span>
+      </button>
+
+      <button class="folder" data-target="#album-salidas">
+        <span class="folder-icon" aria-hidden="true"></span>
+        <span class="folder-name">Salidas Pedagógicas</span>
+      </button>
+    </div>
+
+    <div class="albums">
+      <section class="album" id="album-eventos" aria-hidden="true">
+        <header class="album-header">
+          <h3>Eventos</h3>
+          <div class="album-actions">
+            <button class="play-album" title="Reproducir (autoplay)">▶</button>
+            <button class="close-album" title="Cerrar">×</button>
+          </div>
+        </header>
+        <div class="album-grid">
+          <img src="galeria/EVENTOS/bienvenida1.jpeg" alt="Evento 1" class="zoomable">
+          <img src="galeria/EVENTOS/bienvenida2.jpeg" alt="Evento 2" class="zoomable">
+          <img src="galeria/EVENTOS/bienvenida3.jpg" alt="Evento 2" class="zoomable">
+        </div>
+      </section>
+
+      <section class="album" id="album-trabajos" aria-hidden="true">
+        <header class="album-header">
+          <h3>Trabajos</h3>
+          <div class="album-actions">
+            <button class="play-album" title="Reproducir (autoplay)">▶</button>
+            <button class="close-album" title="Cerrar">×</button>
+          </div>
+        </header>
+        <div class="album-grid">
+          <img src="galeria/trabajos/trabajo1.jpg" alt="Trabajo 1" class="zoomable">
+          <img src="galeria/trabajos/trabajo2.jpg" alt="Trabajo 2" class="zoomable">
+        </div>
+      </section>
+
+      <section class="album" id="album-salidas" aria-hidden="true">
+        <header class="album-header">
+          <h3>Salidas Pedagógicas</h3>
+          <div class="album-actions">
+            <button class="play-album" title="Reproducir (autoplay)">▶</button>
+            <button class="close-album" title="Cerrar">×</button>
+          </div>
+        </header>
+        <div class="album-grid">
+          <img src="galeria/salidas/salida1.jpg" alt="Salida 1" class="zoomable">
+          <img src="galeria/salidas/salida2.jpg" alt="Salida 2" class="zoomable">
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+  <script>
+(function(){
+  const folderButtons = document.querySelectorAll('.folder');
+  const albums = document.querySelectorAll('.album');
+  const closeButtons = document.querySelectorAll('.close-album');
+
+  function closeAll(){
+    albums.forEach(a => {
+      a.classList.remove('is-open');
+      a.setAttribute('aria-hidden','true');
+    });
+  }
+
+  folderButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sel = btn.getAttribute('data-target');  
+      const panel = document.querySelector(sel);
+      if(!panel) return;
+      const isOpen = panel.classList.contains('is-open');
+      closeAll();
+      if(!isOpen){
+        panel.classList.add('is-open');
+        panel.setAttribute('aria-hidden','false');
+        panel.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      const album = e.target.closest('.album');
+      album.classList.remove('is-open');
+      album.setAttribute('aria-hidden','true');
+    });
+  });
+})();
+</script>
+
+
+</body>
+</html>

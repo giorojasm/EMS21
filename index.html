@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Educación Media - EMS.21</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fav.ico">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+  <div class="logo">
+    <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+    <span>Educación Media S21. Venecia I.E.D.</span>
+  </div>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#asignaturas">Asignaturas</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
+      <li><a href="Galeria.html">Galeria</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <section class="hero" id="inicio">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Programa de Educación Media para El siglo XXI </h1>
+      <p>Formación especializada para estudiantes de grados 10° y 11° Colegio Venecia I.E.D.</p>
+      <a href="#asignaturas" class="btn">Ver asignaturas</a>
+    </div>
+  </section>
+
+  <section class="section asignaturas" id="asignaturas">
+    <h2>Nuestras Asignaturas</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3><a href="PDW.html">Programación en Diseño Web</a></h3>
+         <p>Aprende a Diseñar y crear sitios web con HTML, CSS y JavaScript. Diseña soluciones interactivas desde cero.</p>
+      </div>
+      <div class="card">
+        <h3><a href="CYP.html">Comunicación y Procesos</a></h3>
+        <p>Desarrolla habilidades comunicativas para gestionar proyectos, resolver problemas y trabajar en equipo.</p>
+      </div>
+      <div class="card">
+  <h3><a href="ingles.html">Cultura Anglófona</a></h3>
+  <p>Se busca comprender las realidades históricas, sociales y culturales de países de habla inglesa, desde una visión crítica y reflexiva del mundo.</p>
+</div>
+      <div class="card">
+        <h3><a href="RL.html">Línea de Investigación</a></h3>
+        <p>Potencia habilidades esenciales como el pensamiento crítico, la resolución de problemas, la curiosidad, la creatividad y el aprendizaje autónomo. Mediante la investigación se favorece la comprensión del mundo y la construcción significativa del conocimiento.</p>
+      </div>
+    </div>
+    <!-- ==== GRID DE 4 VIDEOS ==== -->
+<section class="videoGrid">
+  <article class="vidCard" data-video="media/charlie.mp4">
+    <img src="diseño1.jpg" alt="Testimonio de Charlie">
+    <div class="vidMeta">
+      <h3>Estudiante 1</h3>
+      <span class="playIcon">►</span>
+    </div>
+  </article>
+
+  <article class="vidCard" data-video="media/olivia.mp4">
+    <img src="" alt="Testimonio de Olivia">
+    <div class="vidMeta">
+      <h3>Estudiante 2</h3>
+      <span class="playIcon">►</span>
+    </div>
+  </article>
+
+  <article class="vidCard" data-video="media/brian.mp4">
+    <img src="" alt="Consejo de Brian">
+    <div class="vidMeta">
+      <h3>Profe 1</h3>
+      <span class="playIcon">►</span>
+    </div>
+  </article>
+
+  <article class="vidCard" data-video="media/campus.mp4">
+    <img src="" alt="Vida en el campus">
+    <div class="vidMeta">
+      <h3>Vida en EMS</h3>
+      <span class="playIcon">►</span>
+    </div>
+  </article>
+</section>
+
+<!-- ==== MODAL DE VIDEO ==== -->
+<div class="vidModal" id="vidModal" aria-hidden="true">
+  <div class="vidBackdrop" data-close></div>
+  <div class="vidDialog" role="dialog" aria-modal="true" aria-label="Reproductor de video">
+    <button class="vidClose" type="button" aria-label="Cerrar video" data-close>×</button>
+    <video id="vidPlayer" controls playsinline preload="metadata"></video>
+  </div>
+</div>
+<!--===== JS video-->
+
+<script>
+(() => {
+  const cards = document.querySelectorAll('.vidCard');
+  const modal = document.getElementById('vidModal');
+  const dialog = modal.querySelector('.vidDialog');
+  const player = document.getElementById('vidPlayer');
+  const closeEls = modal.querySelectorAll('[data-close]');
+  const body = document.body;
+
+  function openModal(src){
+    player.src = src;
+    player.currentTime = 0;
+    modal.classList.add('is-open');
+    body.classList.add('body-noScroll');
+    // Autoplay amigable
+    player.play().catch(()=>{}); 
+  }
+
+  function closeModal(){
+    player.pause();
+    player.removeAttribute('src'); // detiene descarga
+    player.load();
+    modal.classList.remove('is-open');
+    body.classList.remove('body-noScroll');
+  }
+
+  cards.forEach(card=>{
+    card.addEventListener('click', ()=>{
+      const src = card.getAttribute('data-video');
+      if(src) openModal(src);
+    });
+  });
+
+  // Cerrar por X o por fondo
+  closeEls.forEach(el => el.addEventListener('click', closeModal));
+  // Cerrar si se hace click en el backdrop
+  modal.addEventListener('click', (e)=>{
+    if(e.target.classList.contains('vidBackdrop')) closeModal();
+  });
+  // Cerrar con ESC
+  window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+
+  // Evita cierre si haces click dentro del video
+  dialog.addEventListener('click', (e)=>{ e.stopPropagation(); });
+})();
+</script>
+
+  </section>
+
+  <footer class="footer" id="contacto">
+    <p>&copy; 2025 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>

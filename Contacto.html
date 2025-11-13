@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - EMS.21</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    const EMAILJS_PUBLIC_KEY = "TU_PUBLIC_KEY";
+    const EMAILJS_SERVICE_ID = "TU_SERVICE_ID";
+    const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID";
+    const DESTINO_EMAIL = "areadeciencias2020@gmail.com";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.emailjs) emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      const form = document.getElementById("formulario-contacto");
+      const exito = document.getElementById("mensaje-exito");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const datos = {
+          nombre: document.getElementById("nombre").value.trim(),
+          curso: document.getElementById("curso").value.trim(),
+          papa: document.getElementById("papa").value.trim(),
+          mama: document.getElementById("mama").value.trim(),
+          localidad: document.getElementById("localidad").value.trim(),
+          telefono: document.getElementById("telefono").value.trim(),
+          timestamp: new Date().toLocaleString()
+        };
+
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({ unit: "pt", format: "a4" });
+        const m = 56; let y = m;
+        doc.setFont("helvetica", "bold"); doc.setFontSize(16);
+        doc.text("Formulario de Inscripción - EMS.21", m, y);
+        y += 24;
+        doc.setFont("helvetica", "normal"); doc.setFontSize(12);
+        const lineas = [
+          `Nombre del Estudiante: ${datos.nombre}`,
+          `Curso al que Aspira: ${datos.curso}`,
+          `Nombre del Papá: ${datos.papa}`,
+          `Nombre de la Mamá: ${datos.mama}`,
+          `Localidad: ${datos.localidad}`,
+          `Número de Teléfono: ${datos.telefono}`,
+          `Enviado: ${datos.timestamp}`
+        ];
+        lineas.forEach(l => { doc.text(l, m, y); y += 20; });
+
+        const pdfData = doc.output("datauristring");
+        const base64Data = pdfData.split(",")[1];
+
+        const params = {
+          to_email: DESTINO_EMAIL,
+          subject: "Nueva inscripción EMS.21",
+          nombre: datos.nombre,
+          curso: datos.curso,
+          papa: datos.papa,
+          mama: datos.mama,
+          localidad: datos.localidad,
+          telefono: datos.telefono,
+          pdf_attachment: base64Data
+        };
+
+        try {
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+          exito.style.display = "block";
+          form.reset();
+        } catch (error) {
+          console.error(error);
+          alert("Error al enviar el correo. Verifica tus credenciales de EmailJS.");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+      <span>Educación Media S21. Venecia I.E.D.</span>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#asignaturas">Asignaturas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="Galeria.html">Galería</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contacto" class="contact-section">
+      <h2>Formulario de Inscripción</h2>
+      <form id="formulario-contacto">
+        <div class="form-group">
+          <label for="nombre">Nombre del Estudiante</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="curso">Curso al que Aspira</label>
+          <input type="text" id="curso" name="curso" required>
+        </div>
+        <div class="form-group">
+          <label for="papa">Nombre del Papá</label>
+          <input type="text" id="papa" name="papa" required>
+        </div>
+        <div class="form-group">
+          <label for="mama">Nombre de la Mamá</label>
+          <input type="text" id="mama" name="mama" required>
+        </div>
+        <div class="form-group">
+          <label for="localidad">Localidad</label>
+          <input type="text" id="localidad" name="localidad" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Número de Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{7,10}" required>
+        </div>
+        <button type="submit" class="btn btn-enviar">Enviar Formulario</button>
+      </form>
+      <p id="mensaje-exito" class="mensaje-exito" style="display:none;">¡Formulario enviado correctamente!</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>

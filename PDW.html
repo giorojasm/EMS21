@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Programación en Diseño Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fav.ico">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+  <div class="logo">
+    <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+    <span>Programación En Diseño Web</span>
+  </div>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#asignaturas">Asignaturas</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
+      <li><a href="Galeria.html">Galeria</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  
+<section class="slider-section" id="inicio">
+  <div class="slider">
+    <div class="slide"><img src="mix.jpg" alt="Imagen"></div><div class="slide"><img src="codigo.jpg" alt="Imagen"></div><div class="slide"><img src="diseño1.jpg" alt="Imagen"></div><div class="slide"><img src="diseño2.jpg" alt="Imagen"></div><div class="slide"><img src="codigo2.jpg" alt="Imagen"></div>
+  </div>
+</section>
+
+
+  <section class="section asignaturas" id="asignaturas">
+    <h2>Beneficios De Estudiar Con Nosotros</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Beneficio 1</h3>
+        <p>Aprenden a crear páginas web desde cero utilizando lenguajes como HTML, CSS y JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>Beneficio 2</h3>
+        <p>Desarrollan proyectos reales que potencian su creatividad e iniciativa emprendedora; a través del diseño y la programación .</p>
+      </div>
+      <div class="card">
+        <h3>Beneficio 3</h3>
+        <p>Adquieren competencias digitales en diseño y programación,  clave para su vida académica y profesional.</p>
+      </div>
+      <div class="card">
+        <h3>Beneficio 4</h3>
+        <p>Fortalecen el trabajo colaborativo y la comunicación efectiva en entornos tecnológicos.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="presentacion-ingles">
+  <h2>¿Por qué estudiar Programación en Diseño Web?</h2>
+  <p>La programación en diseño web es una de las habilidades más demandadas en el mundo actual. En nuestro colegio, brindamos a los estudiantes las herramientas necesarias para construir sitios web interactivos, visualmente atractivos y funcionales. Desde el aprendizaje del HTML, CSS y JavaScript, hasta el diseño de interfaces responsivas; nuestros estudiantes desarrollan competencias tecnológicas esenciales para el siglo XXI.</p>
+</section>
+
+<section class="section" id="objetivos">
+  <h2>Objetivos de Aprendizaje</h2>
+  <ul>
+    <li>Fomentar el pensamiento lógico y la resolución de problemas a través de la programación..</li>
+    <li>Desarrollar habilidades creativas en el diseño de interfaces digitales.</li>
+    <li>Enseñar el uso de herramientas actuales para la construcción de sitios web funcionales.</li>
+    <li>Preparar a los estudiantes para desafíos del mundo digital y la economía creativa.</li>
+  </ul>
+</section>
+
+
+<section class="section" id="video-hover">
+  <h2>Explora nuestro trabajo</h2>
+  <div class="video-container">
+    <video id="hoverVideo" muted loop preload="auto" playsinline>
+      <source src="video.mp4" type="video/mp4" />
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+  </div>
+</section>
+
+
+<script>
+  const video = document.getElementById("hoverVideo");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play();
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, {
+    threshold: 0.5 // se reproduce cuando el 50% del video esté visible
+  });
+
+  observer.observe(video);
+</script>
+
+
+
+ <!-- este es el codigo del juego  -->
+  <div id="robot-game-host" aria-label="Mini-juego Robot por Comandos"></div>
+<script>
+(function(){
+  var host = document.getElementById('robot-game-host'); if(!host) return;
+  host.tabIndex = 0;
+  var shadow = host.attachShadow({mode:'open'});
+
+  var html = ''
+  + '<style>'
+  + ':host{display:block}'
+  + '.jr-wrap{width:min(100%,1100px);display:grid;gap:16px;grid-template-columns:1fr 320px;margin:0 auto;outline:none;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#e5e7eb}'
+  + '@media (max-width:900px){.jr-wrap{grid-template-columns:1fr}}'
+  + '.jr-panel,.jr-card{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent),#111827;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:14px;box-shadow:0 8px 24px rgba(0,0,0,.2)}'
+  + '.jr-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}'
+  + '.jr-title h3{margin:0;font-size:clamp(18px,2.2vw,22px);letter-spacing:.3px}'
+  + '.jr-muted{color:#cbd5e1;font-size:14px}'
+  + '.jr-hint{font-size:13px;color:#94a3b8}'
+  + '.jr-stats{display:flex;gap:12px;font-size:14px;color:#cbd5e1;flex-wrap:wrap}'
+  + '.jr-tag{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}'
+  + '.jr-grid{aspect-ratio:1/1;width:100%;background:#0b1220;border-radius:14px;padding:10px;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;user-select:none}'
+  + '.jr-cell{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:10px;display:grid;place-items:center}'
+  + '.jr-cell.jr-wall{background:#1f2937}'
+  + '.jr-robot,.jr-goal{width:70%;aspect-ratio:1/1;border-radius:12px;display:grid;place-items:center;font-weight:800;box-shadow:inset 0 0 0 2px rgba(0,0,0,.2),0 6px 14px rgba(0,0,0,.35)}'
+  + '.jr-robot{background:linear-gradient(180deg,#fde68a,#facc15);color:#1f2937}'
+  + '.jr-goal{background:linear-gradient(180deg,#34d399,#10b981);color:#052e2b}'
+  + '.jr-sidebar{display:grid;gap:12px}'
+  + '.jr-cmd-bank,.jr-cmd-seq{display:flex;gap:8px;flex-wrap:wrap;min-height:58px;align-items:flex-start;padding:8px;border-radius:10px;background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12)}'
+  + '.jr-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:999px;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3);color:#a5f3fc;font-weight:600;cursor:grab;user-select:none}'
+  + '.jr-pill[data-dir=U]::before{content:"\\2191"}'
+  + '.jr-pill[data-dir=D]::before{content:"\\2193"}'
+  + '.jr-pill[data-dir=L]::before{content:"\\2190"}'
+  + '.jr-pill[data-dir=R]::before{content:"\\2192"}'
+  + '.jr-pill.jr-small{padding:6px 8px;font-size:14px}'
+  + '.jr-buttons{display:flex;gap:8px;flex-wrap:wrap}'
+  + 'button{background:linear-gradient(180deg,rgba(34,211,238,.15),rgba(34,211,238,.07));color:#e6fbff;border:1px solid rgba(34,211,238,.35);border-radius:10px;padding:10px 12px;font-weight:700;cursor:pointer}'
+  + 'button:hover{transform:translateY(-1px)}'
+  + 'button.jr-secondary{background:transparent;border-color:rgba(255,255,255,.18);color:#cbd5e1}'
+  + 'button.jr-bad{background:linear-gradient(180deg,rgba(239,68,68,.18),rgba(239,68,68,.08));border-color:rgba(239,68,68,.4)}'
+  + '.jr-toast{margin-top:8px;font-size:14px;color:#e2e8f0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px}'
+  + '.jr-stars svg{height:18px;vertical-align:-3px}'
+  + '.jr-blink{animation:jrBlink .7s steps(2,end) 4}'
+  + '@keyframes jrBlink{50%{opacity:.35}}'
+  + '.focus-ring{box-shadow:0 0 0 3px rgba(34,211,238,.45) inset;border-radius:14px}'
+  + '</style>'
+  + '<div class="jr-wrap" role="region" aria-label="Juego Robot por Comandos">'
+  + '  <div class="jr-panel">'
+  + '    <div class="jr-title">'
+  + '      <h3>🤖 Robot por Comandos</h3>'
+  + '      <div class="jr-stats">'
+  + '        <span class="jr-tag">Nivel: <strong id="jr-level">1</strong>/3</span>'
+  + '        <span class="jr-tag">Pasos: <strong id="jr-steps">0</strong></span>'
+  + '        <span class="jr-tag">Intentos: <strong id="jr-tries">0</strong></span>'
+  + '        <span class="jr-tag jr-stars" id="jr-stars" title="Optimiza tus pasos"></span>'
+  + '      </div>'
+  + '    </div>'
+  + '    <p class="jr-muted">Arrastra instrucciones para llevar el robot a la meta. Evita paredes. <span class="jr-hint">Planifica antes de ejecutar.</span></p>'
+  + '    <div id="jr-grid" class="jr-grid"></div>'
+  + '    <div class="jr-toast" id="jr-msg">Coloca tu programa y pulsa <strong>Ejecutar</strong>.</div>'
+  + '  </div>'
+  + '  <div class="jr-sidebar">'
+  + '    <div class="jr-card">'
+  + '      <div class="jr-muted" style="margin-bottom:6px;">Banco de instrucciones</div>'
+  + '      <div id="jr-bank" class="jr-cmd-bank" role="listbox" aria-label="Banco de comandos">'
+  + '        <div class="jr-pill" draggable="true" data-dir="U">Arriba</div>'
+  + '        <div class="jr-pill" draggable="true" data-dir="D">Abajo</div>'
+  + '        <div class="jr-pill" draggable="true" data-dir="L">Izquierda</div>'
+  + '        <div class="jr-pill" draggable="true" data-dir="R">Derecha</div>'
+  + '        <div class="jr-pill" draggable="true" data-dir="R">Derecha</div>'
+  + '        <div class="jr-pill" draggable="true" data-dir="U">Arriba</div>'
+  + '      </div>'
+  + '      <div class="jr-hint">Usa lo mínimo para ganar ⭐️⭐️⭐️</div>'
+  + '    </div>'
+  + '    <div class="jr-card">'
+  + '      <div class="jr-muted" style="margin-bottom:6px;">Tu programa (arrastra aquí)</div>'
+  + '      <div id="jr-seq" class="jr-cmd-seq"><span class="jr-drop-hint">Suelta comandos aquí…</span></div>'
+  + '      <div class="jr-buttons" style="margin-top:10px">'
+  + '        <button id="jr-run">▶ Ejecutar</button>'
+  + '        <button id="jr-step" class="jr-secondary">▹ Paso</button>'
+  + '        <button id="jr-reset" class="jr-secondary">↺ Reiniciar</button>'
+  + '        <button id="jr-clear" class="jr-bad">🗑 Limpiar programa</button>'
+  + '      </div>'
+  + '    </div>'
+  + '    <div class="jr-card">'
+  + '      <div class="jr-muted" style="margin-bottom:8px;">Objetivo pedagógico</div>'
+  + '      <div class="jr-hint">Programar es dar instrucciones claras y ordenadas. Optimizar pasos desarrolla pensamiento algorítmico.</div>'
+  + '    </div>'
+  + '  </div>'
+  + '</div>';
+
+  shadow.innerHTML = html;
+
+  function $(sel){ return shadow.querySelector(sel); }
+  var grid = $('#jr-grid'), bank = $('#jr-bank'), seq = $('#jr-seq'), msg = $('#jr-msg');
+  var steps = $('#jr-steps'), tries = $('#jr-tries'), lvlEl = $('#jr-level'), stars = $('#jr-stars');
+
+  var LEVELS = [
+    {map:[['S',0,0,0,1,0,0],[1,1,0,0,1,0,0],[0,0,0,1,1,0,0],[0,1,0,0,0,0,0],[0,1,1,1,0,1,0],[0,0,0,0,0,1,0],[0,0,1,0,0,0,'G']],par:10},
+    {map:[['S',0,1,0,0,0,0],[0,0,1,0,1,1,0],[1,0,0,0,0,1,0],[0,1,1,1,0,0,0],[0,0,0,1,0,1,0],[1,1,0,0,0,1,0],[0,0,0,1,0,0,'G']],par:11},
+    {map:[['S',0,1,0,0,0,0],[1,0,1,0,1,1,0],[0,0,0,0,0,1,0],[0,1,1,1,0,0,0],[0,0,0,1,0,1,0],[0,1,0,0,0,1,0],[0,0,0,1,0,0,'G']],par:10}
+  ];
+  var S = {lvl:0, robot:{r:0,c:0}, goal:{r:0,c:0}, steps:0, tries:0, running:false, pointer:0, seq:[]};
+
+  function starRender(par,used){
+    var s = 1; if(used <= par) s = 3; else if(used <= par+2) s = 2;
+    var svg = '';
+    for(var i=0;i<3;i++){
+      svg += '<svg viewBox="0 0 24 24" fill="'+(i<s?'#fde047':'none')+'" stroke="#fde047" stroke-width="1.6" style="margin-right:2px">'
+           + '<path d="M12 2l3.09 6.26 6.91 1-5 4.87L18.18 22 12 18.77 5.82 22l1.18-7.87-5-4.87 6.91-1L12 2z"/></svg>';
+    }
+    stars.innerHTML = svg;
+  }
+
+  function build(){
+    grid.innerHTML = '';
+    var map = LEVELS[S.lvl].map;
+    for(var r=0;r<map.length;r++){
+      for(var c=0;c<map[0].length;c++){
+        var d = document.createElement('div');
+        d.className = 'jr-cell' + (map[r][c]===1 ? ' jr-wall':'');
+        d.setAttribute('data-r', r); d.setAttribute('data-c', c);
+        if(map[r][c]==='S'){ S.robot={r:r,c:c}; drawRobot(d); }
+        if(map[r][c]==='G'){ S.goal={r:r,c:c}; drawGoal(d); }
+        grid.appendChild(d);
+      }
+    }
+    steps.textContent = (S.steps = 0);
+    starRender(LEVELS[S.lvl].par, 999);
+  }
+
+  function cellAt(r,c){ return grid.querySelector('.jr-cell[data-r="'+r+'"][data-c="'+c+'"]'); }
+  function drawRobot(d){ var n=document.createElement('div'); n.className='jr-robot'; n.textContent='🤖'; d.appendChild(n); }
+  function drawGoal(d){ var n=document.createElement('div'); n.className='jr-goal'; n.textContent='🏁'; d.appendChild(n); }
+  function isWall(r,c){ var m=LEVELS[S.lvl].map; return (r<0||c<0||r>=m.length||c>=m[0].length||m[r][c]===1); }
+  function setMsg(t){ msg.innerHTML = t; }
+
+  function findStart(){
+    var m=LEVELS[S.lvl].map;
+    for(var r=0;r<m.length;r++) for(var c=0;c<m[0].length;c++) if(m[r][c]==='S') return {r:r,c:c};
+    return {r:0,c:0};
+  }
+  function clearSprites(){ var nodes = grid.querySelectorAll('.jr-robot, .jr-goal'); for(var i=0;i<nodes.length;i++){ nodes[i].parentNode.removeChild(nodes[i]); } }
+
+  function reset(hard){
+    var s=findStart();
+    S.robot={r:s.r,c:s.c}; S.steps=0; steps.textContent=0; S.pointer=0; S.running=false;
+    clearSprites(); drawRobot(cellAt(S.robot.r,S.robot.c)); drawGoal(cellAt(S.goal.r,S.goal.c));
+    if(hard){ seq.innerHTML='<span class="jr-drop-hint">Suelta comandos aquí…</span>'; S.seq=[]; }
+    setMsg('Listo. Vuelve a intentar y optimiza tu solución.');
+  }
+
+  function doStep(dir){
+    var dr = dir==='U'?-1:dir==='D'?1:0;
+    var dc = dir==='L'?-1:dir==='R'?1:0;
+    var nxt = { r:S.robot.r+dr, c:S.robot.c+dc };
+    if(isWall(nxt.r,nxt.c)){
+      var cur = cellAt(S.robot.r,S.robot.c);
+      if(cur){ cur.classList.add('jr-blink'); setTimeout(function(){ cur.classList.remove('jr-blink'); }, 400); }
+      setMsg('💥 ¡Choque contra una pared! Repiensa tu algoritmo.');
+      return false;
+    }
+    var old = cellAt(S.robot.r,S.robot.c); if(old){ var rob=old.querySelector('.jr-robot'); if(rob) old.removeChild(rob); }
+    S.robot = nxt;
+    drawRobot(cellAt(S.robot.r,S.robot.c));
+    S.steps++; steps.textContent = S.steps;
+    if(S.robot.r===S.goal.r && S.robot.c===S.goal.c){
+      var used = S.seq.length;
+      starRender(LEVELS[S.lvl].par, used);
+      setMsg('🎉 ¡Meta alcanzada! Usaste <strong>'+used+'</strong> comandos. Intenta igualar o superar el par ('+LEVELS[S.lvl].par+').');
+      return 'WIN';
+    }
+    return true;
+  }
+
+  function run(stepwise){
+    if(S.running) return;
+    var pills = seq.querySelectorAll('.jr-pill'); if(!pills.length){ setMsg('Agrega comandos a tu programa antes de ejecutar.'); return; }
+    var cmds = []; for(var i=0;i<pills.length;i++){ cmds.push(pills[i].getAttribute('data-dir')); }
+    S.seq = cmds;
+    S.tries++; tries.textContent = S.tries;
+    setMsg('Ejecutando…'); S.running=true; S.pointer=0;
+
+    (function tick(){
+      if(S.pointer >= S.seq.length){ setMsg('Programa finalizado. ¿Llegaste a la meta? Si no, optimiza y reintenta.'); S.running=false; return; }
+      var r = doStep(S.seq[S.pointer++]);
+      if(r==='WIN'){ S.running=false; return; }
+      if(r===false){ S.running=false; return; }
+      if(stepwise){ S.running=false; setMsg('Paso ejecutado. Pulsa “Paso” otra vez para continuar.'); return; }
+      setTimeout(tick, 260);
+    })();
+  }
+
+  function makeDraggable(root){
+    root.addEventListener('dragstart', function(e){
+      if(!e.target.classList.contains('jr-pill')) return;
+      e.dataTransfer.setData('text/plain', e.target.getAttribute('data-dir'));
+      e.dataTransfer.effectAllowed = 'copyMove';
+    });
+  }
+  function getAfter(container, x, y){
+    var els = container.querySelectorAll('.jr-pill:not(.dragging)');
+    for(var i=0;i<els.length;i++){ var r=els[i].getBoundingClientRect(); if(y < r.top + r.height/2) return els[i]; }
+    return null;
+    }
+  function makeDroppable(target){
+    target.addEventListener('dragover', function(e){ e.preventDefault(); e.dataTransfer.dropEffect='copy'; });
+    target.addEventListener('drop', function(e){
+      e.preventDefault();
+      var dir = e.dataTransfer.getData('text/plain'); if(!dir) return;
+      var hint = target.querySelector('.jr-drop-hint'); if(hint) hint.parentNode.removeChild(hint);
+      var p = document.createElement('div'); p.className='jr-pill jr-small'; p.setAttribute('data-dir', dir);
+      p.textContent = (dir==='U'?'Arriba':dir==='D'?'Abajo':dir==='L'?'Izquierda':'Derecha');
+      p.title = 'Doble clic para eliminar'; p.draggable = true; target.appendChild(p);
+      setMsg('Puedes reordenar los comandos o ejecutar el programa.');
+    });
+
+    var dragged = null;
+    target.addEventListener('dragstart', function(e){
+      if(e.target.classList.contains('jr-pill')){ dragged = e.target; e.dataTransfer.setData('text/plain',''); }
+    });
+    target.addEventListener('dragend', function(){ dragged=null; });
+    target.addEventListener('dragover', function(e){
+      if(!dragged) return;
+      var after = getAfter(target, e.clientX, e.clientY);
+      if(after==null) target.appendChild(dragged); else target.insertBefore(dragged, after);
+    });
+    target.addEventListener('dblclick', function(e){
+      if(e.target.classList.contains('jr-pill')){ e.target.parentNode.removeChild(e.target); }
+      if(!target.querySelector('.jr-pill')){ target.innerHTML = '<span class="jr-drop-hint">Suelta comandos aquí…</span>'; }
+    });
+  }
+
+  function init(){
+    lvlEl.textContent = (S.lvl+1);
+    build(); setMsg('Coloca tu programa y pulsa Ejecutar.'); starRender(LEVELS[S.lvl].par, 999);
+    makeDraggable(bank); makeDroppable(seq);
+
+    shadow.getElementById('jr-run').addEventListener('click', function(){ run(false); });
+    shadow.getElementById('jr-step').addEventListener('click', function(){ run(true); });
+    shadow.getElementById('jr-reset').addEventListener('click', function(){ reset(false); });
+    shadow.getElementById('jr-clear').addEventListener('click', function(){ reset(true); });
+
+    host.addEventListener('keydown', function(e){
+      var map = {ArrowUp:'U',ArrowDown:'D',ArrowLeft:'L',ArrowRight:'R'};
+      if(map[e.key]){
+        e.preventDefault();
+        var hint = seq.querySelector('.jr-drop-hint'); if(hint) hint.parentNode.removeChild(hint);
+        var p = document.createElement('div'); p.className='jr-pill jr-small'; p.setAttribute('data-dir', map[e.key]);
+        p.textContent = (map[e.key]==='U'?'Arriba':map[e.key]==='D'?'Abajo':map[e.key]==='L'?'Izquierda':'Derecha');
+        p.draggable = true; seq.appendChild(p);
+      }
+      if(e.key==='Enter'){ e.preventDefault(); run(false); }
+    });
+
+    host.addEventListener('focus', function(){ var w=shadow.querySelector('.jr-wrap'); if(w) w.classList.add('focus-ring'); });
+    host.addEventListener('blur', function(){ var w=shadow.querySelector('.jr-wrap'); if(w) w.classList.remove('focus-ring'); });
+
+    var obs = new MutationObserver(function(){
+      if(msg.textContent.indexOf('Meta alcanzada')!==-1 && S.lvl < LEVELS.length-1){
+        setTimeout(function(){
+          S.lvl++; lvlEl.textContent = (S.lvl+1); S.tries = 0; tries.textContent = 0;
+          build(); setMsg('Nuevo nivel. ¿Puedes lograr 3 ⭐️?');
+        }, 900);
+      }
+    });
+    obs.observe(msg, {childList:true, subtree:true});
+  }
+  init();
+})();
+</script>
+
+
+
+
+
+
+
+
+  <footer class="footer" id="contacto">
+    <p>&copy; 2025 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
