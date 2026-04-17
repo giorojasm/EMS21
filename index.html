@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Educación Media - EMS.21</title>
+  <link rel="shortcut icon" href="fav.ico">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Prevenir flash de tema incorrecto -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+      <span>Educación Media S21. Venecia I.E.D.</span>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#asignaturas">Asignaturas</a></li>
+        <li><a href="Galeria.html">Galería</a></li>
+        <li><a href="STEAM.html">Olimpiadas STEAM</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <!-- ===== BANNER DE IMÁGENES (TRANSICIÓN FADE TIPO NETFLIX) ===== -->
+  <section class="slider-section netflix" aria-label="Banner de imágenes">
+    <div class="slider">
+
+      <div class="slide">
+        <img src="fotos EMI/home3.png" alt="Educación Media EMS">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Bienvenidos a EMSXXI</h2>
+            <p>Formamos estudiantes preparados para los retos del siglo XXI.</p>
+          
+          <div class="slide-actions">
+            <a href="#asignaturas" class="btn btn-slide">Ver asignaturas</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="fotos EMI/2.png" alt="Programación en Diseño Web">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Programación y Diseño Web</h2>
+          <p>Construimos experiencias digitales con HTML, CSS y JavaScript.</p>
+          <div class="slide-actions">
+            <a href="PDW.html" class="btn btn-slide">Explorar PDW</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fotos EMI\5.png" alt="Cultura Anglófona">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Cultura Anglófona</h2>
+          <p>Una mirada crítica a la historia y cultura de países de habla inglesa.</p>
+          <div class="slide-actions">
+            <a href="ingles.html" class="btn btn-slide">Ir a Inglés</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="fotos EMI/3.png" alt="Comunicación y Procesos">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Comunicación y Procesos</h2>
+          <p>Habilidades para resolver problemas, liderar y trabajar en equipo.</p>
+          <div class="slide-actions">
+            <a href="CYP.html" class="btn btn-slide">Explorar CYP</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fotos EMI\7.png" alt="Línea de Investigación">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <h2>Línea de Investigación</h2>
+          <p>Pensamiento crítico, creatividad y aprendizaje autónomo.</p>
+          <div class="slide-actions">
+            <a href="RL.html" class="btn btn-slide">Explorar RL</a>
+            <a href="Contacto.html" class="btn btn-slide secondary">Contacto</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section class="hero" id="inicio">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Programa de Educación Media para El siglo XXI</h1>
+      <p>Formación especializada para estudiantes de grados 10° y 11° Colegio Venecia I.E.D.</p>
+      <a href="#asignaturas" class="btn">Ver asignaturas</a>
+    </div>
+  </section>
+
+  <section class="section asignaturas" id="asignaturas">
+    <h2>Nuestras Asignaturas</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3><a href="PDW.html">Programación en Diseño Web</a></h3>
+        <p>Aprende a Diseñar y crear sitios web con HTML, CSS y JavaScript. Diseña soluciones interactivas desde cero.</p>
+      </div>
+      <div class="card">
+        <h3><a href="CYP.html">Comunicación y Procesos</a></h3>
+        <p>Desarrolla habilidades comunicativas para gestionar proyectos, resolver problemas y trabajar en equipo.</p>
+      </div>
+      <div class="card">
+        <h3><a href="ingles.html">Cultura Anglófona</a></h3>
+        <p>Se busca comprender las realidades históricas, sociales y culturales de países de habla inglesa, desde una visión crítica y reflexiva del mundo.</p>
+      </div>
+      <div class="card">
+        <h3><a href="RL.html">Línea de Investigación</a></h3>
+        <p>Potencia habilidades esenciales como el pensamiento crítico, la resolución de problemas, la curiosidad, la creatividad y el aprendizaje autónomo.</p>
+      </div>
+    </div>
+
+    <!-- Grid de Videos -->
+    <section class="videoGrid">
+      <article class="vidCard" data-video="media/charlie.mp4">
+        <img src="diseño1.jpg" alt="Estudiante 1">
+        <div class="vidMeta">
+          <h3>Estudiante 1</h3>
+          <span class="playIcon">►</span>
+        </div>
+      </article>
+
+      <article class="vidCard" data-video="media/olivia.mp4">
+        <img src="estudiante2.jpg" alt="Estudiante 2">
+        <div class="vidMeta">
+          <h3>Estudiante 2</h3>
+          <span class="playIcon">►</span>
+        </div>
+      </article>
+
+      <article class="vidCard" data-video="media/brian.mp4">
+        <img src="profe1.jpg" alt="profe 1">
+        <div class="vidMeta">
+          <h3>Profe 1</h3>
+          <span class="playIcon">►</span>
+        </div>
+      </article>
+
+      <article class="vidCard" data-video="media/campus.mp4">
+        <img src="campus.jpg" alt="Vida en EMS21">
+        <div class="vidMeta">
+          <h3>Vida en EMS</h3>
+          <span class="playIcon">►</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Modal de Video -->
+    <div class="vidModal" id="vidModal" aria-hidden="true">
+      <div class="vidBackdrop" data-close></div>
+      <div class="vidDialog" role="dialog" aria-modal="true" aria-label="Reproductor de video">
+        <button class="vidClose" type="button" aria-label="Cerrar video" data-close>×</button>
+        <video id="vidPlayer" controls playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="contacto">
+    <p>&copy; 2026 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts de Animaciones -->
+  <script src="animations.js"></script>
+</body>
+</html>

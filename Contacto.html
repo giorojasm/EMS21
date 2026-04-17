@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - EMS.21</title>
+  <link rel="shortcut icon" href="fav.ico">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Prevenir flash de tema incorrecto -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+ 
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+      <span>Educación Media S21. Venecia I.E.D.</span>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#asignaturas">Asignaturas</a></li>
+        <li><a href="Galeria.html">Galería</a></li>
+        <li><a href="STEAM.html">Olimpiadas STEAM</a></li>
+        <li><a href="#contacto" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contacto" class="contact-section">
+      <h2>Formulario de Inscripción</h2>
+      
+      <form id="formulario-contacto" action="https://formsubmit.co/emsvenecia@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nueva inscripción EMS.21">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/gracias.html">
+        <div class="form-group">
+          <label for="nombre">Nombre del Estudiante</label>
+          <input type="text" id="nombre" name="nombre" placeholder=" " required>
+        </div>
+        <div class="form-group">
+          <label for="curso">Curso al que Aspira</label>
+          <input type="text" id="curso" name="curso" placeholder=" " required>
+        </div>
+        <div class="form-group">
+          <label for="papa">Nombre del Papá</label>
+          <input type="text" id="papa" name="papa" placeholder=" " required>
+        </div>
+        <div class="form-group">
+          <label for="mama">Nombre de la Mamá</label>
+          <input type="text" id="mama" name="mama" placeholder=" " required>
+        </div>
+        <div class="form-group">
+          <label for="localidad">Localidad</label>
+          <input type="text" id="localidad" name="localidad" placeholder=" " required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Número de Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{7,10}" placeholder=" " required>
+        </div>
+        <button type="submit" class="btn btn-enviar">Enviar Formulario</button>
+      </form>
+      <p id="mensaje-exito" class="mensaje-exito" style="display:none;">¡Formulario enviado correctamente!</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts de Animaciones -->
+  <script src="animations.js"></script>
+  
+     
+   
+
+    
+</body>
+</html>

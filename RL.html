@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research Line - EMS.21</title>
+  <link rel="shortcut icon" href="fav.ico">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Prevenir flash de tema incorrecto -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+      <span>Research Line</span>
+    </div>
+    <button class="hamburger" aria-label="Menú de navegación" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#asignaturas" class="active">Asignaturas</a></li>
+        <li><a href="Galeria.html">Galería</a></li>
+        <li><a href="STEAM.html">Olimpiadas STEAM</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="mobile-menu-overlay"></div>
+
+  <section class="slider-section" id="inicio">
+    <div class="slider">
+      <div class="slide"><img src="kenny-eliason-zFSo6bnZJTw-unsplash.jpg" alt="Imagen 1"></div>
+      <div class="slide"><img src="letrama.jpg" alt="Imagen 2"></div>
+      <div class="slide"><img src="libros.jpg" alt="Imagen 3"></div>
+      <div class="slide"><img src="maquina.jpg" alt="Imagen 4"></div>
+      <div class="slide"><img src="mesaletra.jpg" alt="Imagen 5"></div>
+    </div>
+  </section>
+
+  <section class="section asignaturas" id="asignaturas">
+    <h2>Benefits To Learn With Us</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>First benefit</h3>
+        <p>Researching in English allows you to access diverse perspectives and viewpoints around the world.</p>
+      </div>
+      <div class="card">
+        <h3>Second benefit</h3>
+        <p>Proficiency in researching in English can enhance your academic and professional prospects in every single field of knowledge.</p>
+      </div>
+      <div class="card">
+        <h3>Third benefit</h3>
+        <p>Enhanced critical thinking and analytical skills, which can be developed and refined through practice.</p>
+      </div>
+      <div class="card">
+        <h3>Fourth benefit</h3>
+        <p>Better understanding of world, you can connect with REAL problems and you can give REAL solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="presentacion-ingles">
+    <h2>Why should you learn to research in English?</h2>
+    <p>Overall, learning to research in English can open doors to new knowledge, perspectives, and opportunities, and can be a valuable skill in today's interconnected world.</p>
+  </section>
+
+  <section class="section" id="objetivos">
+    <h2>Specific Objectives</h2>
+    <ul>
+      <li>To identify problems, seek solutions and evaluate different approaches.</li>
+      <li>To explore the world around them, promoting creativity and the ability to generate new ideas.</li>
+      <li>To participate in the construction of their own knowledge, which facilitates a deeper and lasting understanding of English.</li>
+      <li>To provide skills and knowledge which will be useful in their future education or their working life.</li>
+      <li>To encourage teamwork, communication and collaboration.</li>
+    </ul>
+  </section>
+
+  <footer class="footer" id="contacto">
+    <p>&copy; 2026 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts de Animaciones -->
+  <script src="animations.js"></script>
+</body>
+</html>

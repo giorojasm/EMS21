@@ -1,0 +1,226 @@
+<DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EMS.21 - Olimpiadas STEAM</title>
+  <link rel="shortcut icon" href="fav.ico">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Prevenir flash de tema incorrecto -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+      <span>Olimpiadas Steam</span>
+    </div>
+    <button class="hamburger" aria-label="Menú de navegación" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#asignaturas" class="active">Asignaturas</a></li>
+        <li><a href="Galeria.html">Galería</a></li>
+        <li><a href="#asignaturas">Olimpiadas STEAM</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="mobile-menu-overlay"></div>
+
+  <section class="slider-section" id="inicio">
+    <div class="slider">
+      <div class="slide"><img src="fotos EMI/STEAM.png" alt="Imagen 1"></div>
+      <div class="slide"><img src="fotos EMI/2.png" alt="Imagen 2"></div>
+      <div class="slide"><img src="fotos EMI/STEAM2.png" alt="Imagen 3"></div>
+      <div class="slide"><img src="fotos EMI/steam3.png" alt="Imagen 4"></div>
+      <div class="slide"><img src="fotos EMI/ultima.png" alt="Imagen 5"></div>
+    </div>
+  </section>
+
+  <section class="section asignaturas" id="asignaturas">
+    <h2>Olimpiadas STEAM</h2>
+
+    <div class="asignaturas-grid">
+      <!-- Tarjeta 1:  -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fotos EMI\ciencia.png" alt="Ícono Grade 10">
+          </div>
+          <div class="flip-back">
+            <h3>🔬 S – Ciencia (Science)</h3>
+            <p> La ciencia impulsa la curiosidad y el deseo de comprender el mundo. A través de la observación, la experimentación y el análisis, los estudiantes desarrollan habilidades para formular preguntas, investigar fenómenos naturales y construir conocimiento basado en evidencias. La ciencia es la base para entender cómo funciona la vida, el entorno y el universo.</p>
+            <div class="flip-links">
+              
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: Grade 11 -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fotos EMI\chip.png" alt="Ícono Grade 11">
+          </div>
+          <div class="flip-back">
+            <h3>💻 T – (Technology)</h3>
+            <p>La tecnología permite transformar ideas en soluciones. En STEAM, los estudiantes no solo usan herramientas digitales, sino que también aprenden a crearlas, comprenderlas y aplicarlas de manera responsable. Desde la programación hasta el uso de plataformas digitales.</p>
+            <div class="flip-links">
+                            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3: Cultural Gallery -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fotos EMI\software.png" alt="Ícono Cultural Gallery">
+          </div>
+          <div class="flip-back">
+            <h3>⚙️ E – Engineering</h3>
+            <p>La ingeniería fomenta la capacidad de diseñar, construir y mejorar soluciones a problemas reales. A través de retos y proyectos, los estudiantes desarrollan pensamiento lógico, creatividad y trabajo en equipo. La ingeniería convierte el conocimiento en acción, permitiendo crear estructuras, sistemas y procesos funcionales.</p>
+            <div class="flip-links">
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4: Voices of Venecia -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fotos EMI\pintar.png" alt="Ícono Voices of Venecia">
+          </div>
+          <div class="flip-back">
+            <h3>🎨 A – Arts</h3>
+            <p>El arte aporta creatividad, expresión y sensibilidad al aprendizaje. En STEAM, el arte no es un complemento, sino un eje fundamental que permite imaginar, diseñar y comunicar ideas de manera innovadora. A través de distintas formas de expresión, los estudiantes desarrollan pensamiento creativo y habilidades para ver el mundo.</p>
+            <div class="flip-links">
+              
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 5: Time & Map Explorer -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fotos EMI\cerebro.png" alt="Ícono Time & Map Explorer">
+          </div>
+          <div class="flip-back">
+            <h3>📊 M – Maths</h3>
+            <p>Las matemáticas son el lenguaje que permite interpretar y resolver problemas. En el enfoque STEAM, se aplican de manera práctica para analizar datos, reconocer patrones y tomar decisiones. Más allá de los números, las matemáticas fortalecen el pensamiento lógico y la capacidad de estructurar soluciones..</p>
+            <div class="flip-links">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 6: AMERICAN MUSEUM) -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            
+            <img src="C:\Users\DOCENTE MAÑANA\Desktop\EMI\PaginaEMS\pagina2\fotos EMI\planeta.png" alt="Ícono Nueva Tarjeta">
+          </div>
+          <div class="flip-back">
+            
+            <h3>2025</h3>
+            
+            <p>Nuestros estudiantes participaron en las olimpiadas STEAM  en la cual fueron destacados por sus trabajos en dicha competicion; el desarrollo de estas fueron durante el año 2025 y obtuvieron el premio en la modalidad colegio .</p>
+            <div class="flip-links">
+              <a href="https://padlet.com/alirodp29/stem-olympiad-2025-ems-21-colegio-venecia-ied-lgfzpcora9o6odqh" target="_blank" class="flip-link"> Click Here</a>
+             
+              
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+   <section class="section" id="video-hover">
+    <h2>Explora nuestro trabajo</h2>
+    <div class="video-container">
+      <video id="hoverVideo" muted loop preload="auto" playsinline>
+        <source src="video.mp4" type="video/mp4" />
+        Tu navegador no soporta la etiqueta de video.
+      </video>
+    </div>
+  </section>
+
+  <script>
+    const video = document.getElementById("hoverVideo");
+    if (video) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+      observer.observe(video);
+    }
+  </script>
+
+  <section class="section" id="presentacion-ingles">
+    <h2>¿Por qué estudiar con Nosotros?</h2>
+    <p>Estudiar en el Programa EMS 21 del Colegio Venecia significa formarse en un ambiente innovador donde el enfoque STEAM impulsa el pensamiento crítico, la creatividad y el trabajo en equipo. Los estudiantes no solo aprenden, sino que participan en proyectos, ferias y olimpiadas académicas, representando al colegio y fortaleciendo sus habilidades.
+
+Es una institución que prepara a sus estudiantes para el futuro, potenciando su talento y brindándoles oportunidades reales de crecimiento.</p>
+  </section>
+
+  <section class="section" id="objetivos">
+    <h2>Metas de Aprendizaje</h2>
+    <ul>
+      <li>Despertar mentes curiosas que preguntan, exploran y crean sin límites.</li>
+      <li>Formar estudiantes capaces de resolver problemas reales con ideas innovadoras.</li>
+      <li>Impulsar el talento en ciencia, tecnología, ingeniería, arte y matemáticas de manera integrada..</li>
+      <li>Convertir la tecnología en una herramienta para crear, diseñar y transformar el mundo.</li>
+      <li>Fortalecer el trabajo en equipo para lograr grandes ideas y proyectos colaborativos.</li>
+      <li>Inspirar a nuestros estudiantes a participar y destacarse en ferias, olimpiadas y retos académicos.</li>
+      <li>Desarrollar habilidades que los preparen para los desafíos del presente y del futuro.</li>
+    </ul>
+  </section>
+
+  <footer class="footer" id="contacto">
+    <p>&copy; 2026 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts de Animaciones -->
+  <script src="animations.js"></script>
+</body>
+</html>

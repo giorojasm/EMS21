@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galería - EMS.21</title>
+  <link rel="shortcut icon" href="fav.ico">
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+      <span>Educación Media S21. Venecia I.E.D.</span>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#asignaturas">Asignaturas</a></li>
+        <li><a href="Galeria.html" class="active">Galería</a></li>
+        <li><a href="STEAM.html">Olimpiadas STEAM</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section galeria">
+    <h2>Galería</h2>
+
+    <div class="folders">
+      <button class="folder" data-target="#album-eventos">
+        <span class="folder-icon" aria-hidden="true"></span>
+        <span class="folder-name">Eventos</span>
+      </button>
+
+      <button class="folder" data-target="#album-trabajos">
+        <span class="folder-icon" aria-hidden="true"></span>
+        <span class="folder-name">Trabajos</span>
+      </button>
+
+      <button class="folder" data-target="#album-salidas">
+        <span class="folder-icon" aria-hidden="true"></span>
+        <span class="folder-name">Salidas Pedagógicas</span>
+      </button>
+    </div>
+
+    <div class="albums">
+      <section class="album" id="album-eventos" aria-hidden="true">
+        <header class="album-header">
+          <h3>Eventos</h3>
+          <div class="album-actions">
+            <button class="play-album" title="Reproducir (autoplay)">▶</button>
+            <button class="close-album" title="Cerrar">×</button>
+          </div>
+        </header>
+        <div class="album-grid">
+          <img src="galeria/EVENTOS/bienvenida1.jpeg" alt="Evento 1" class="zoomable">
+          <img src="galeria/EVENTOS/bienvenida2.jpeg" alt="Evento 2" class="zoomable">
+          <img src="galeria/eventos/5.jpg" alt="Evento 3" class="zoomable">
+          <img src="galeria/EVENTOS/bienvenida3.jpg" alt="Evento 1" class="zoomable">
+          <img src="galeria/EVENTOS/Recreo.png" alt="Evento 1" class="zoomable">
+          <img src="galeria/EVENTOS/Recreo.png" alt="Evento 1" class="zoomable">
+        </div>
+      </section>
+
+      <section class="album" id="album-trabajos" aria-hidden="true">
+        <header class="album-header">
+          <h3>Trabajos</h3>
+          <div class="album-actions">
+            <button class="play-album" title="Reproducir (autoplay)">▶</button>
+            <button class="close-album" title="Cerrar">×</button>
+          </div>
+        </header>
+        <div class="album-grid">
+          <img src="galeria/TRABAJOS/trabajo8.png" alt="Trabajo 1" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo7.jpeg" alt="Trabajo 2" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo1.jpeg" alt="Trabajo 2" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo2.jpeg" alt="Trabajo 2" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo3.jpeg" alt="Trabajo 2" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo4.jpeg" alt="Trabajo 2" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo5.jpeg" alt="Trabajo 2" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo6.jpeg" alt="Trabajo 2" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo9.webp" alt="Trabajo 2" class="zoomable">
+          <img src="galeria/TRABAJOS/trabajo10.jpg" alt="Trabajo 2" class="zoomable">
+        </div>
+      </section>
+
+      <section class="album" id="album-salidas" aria-hidden="true">
+        <header class="album-header">
+          <h3>Salidas Pedagógicas</h3>
+          <div class="album-actions">
+            <button class="play-album" title="Reproducir (autoplay)">▶</button>
+            <button class="close-album" title="Cerrar">×</button>
+          </div>
+        </header>
+        <div class="album-grid">
+          <img src="galeria/salidas/salida1.jpg" alt="Salida 1" class="zoomable">
+          <img src="galeria/salidas/salida2.jpg" alt="Salida 2" class="zoomable">
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Cerrar">×</button>
+    <button class="lightbox-prev" aria-label="Anterior">‹</button>
+    <img id="lightbox-img" src="" alt="Imagen ampliada">
+    <button class="lightbox-next" aria-label="Siguiente">›</button>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="animations.js"></script>
+
+  <script>
+    (function () {
+      const folderButtons = document.querySelectorAll('.folder');
+      const albums = document.querySelectorAll('.album');
+      const closeButtons = document.querySelectorAll('.close-album');
+
+      function closeAll() {
+        albums.forEach(album => {
+          album.classList.remove('is-open');
+          album.setAttribute('aria-hidden', 'true');
+        });
+      }
+
+      folderButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-target');
+          const panel = document.querySelector(target);
+
+          if (!panel) return;
+
+          const isOpen = panel.classList.contains('is-open');
+          closeAll();
+
+          if (!isOpen) {
+            panel.classList.add('is-open');
+            panel.setAttribute('aria-hidden', 'false');
+            panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      closeButtons.forEach(btn => {
+        btn.addEventListener('click', e => {
+          const album = e.target.closest('.album');
+          if (!album) return;
+          album.classList.remove('is-open');
+          album.setAttribute('aria-hidden', 'true');
+        });
+      });
+
+      const playButtons = document.querySelectorAll('.play-album');
+      playButtons.forEach(btn => {
+        btn.addEventListener('click', e => {
+          const album = e.target.closest('.album');
+          if (!album) return;
+
+          const images = album.querySelectorAll('.album-grid img');
+          if (images.length > 0) {
+            images[0].click();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EMS.21- Comunicación y Procesos</title>
+  <link rel="shortcut icon" href="fav.ico">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Prevenir flash de tema incorrecto -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo Colegio Venecia IED">
+      <span>Comunicación y Procesos</span>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#asignaturas" class="active">Asignaturas</a></li>
+        <li><a href="Galeria.html">Galería</a></li>
+        <li><a href="STEAM.html">Olimpiadas STEAM</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="slider-section" id="inicio">
+    <div class="slider">
+      <div class="slide"><img src="fotos EMI/CYP.png"></div>
+      <div class="slide"><img src="fotos EMI/CYP1.jpeg" alt="Imagen 2"></div>
+      <div class="slide"><img src="fotos EMI/CYP2.png" alt="Imagen 3"></div>
+      <div class="slide"><img src="fotos EMI/CYP3.png" alt="Imagen 4"></div>
+      <div class="slide"><img src="fotos EMI/CYP4.png" alt="Imagen 5"></div>
+    </div>
+  </section>
+
+  <section class="section asignaturas" id="asignaturas">
+    <h2>Beneficios De Estudiar Con Nosotros</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Beneficio 1</h3>
+        <p>Aprendes a analizar tu entorno, hacer preguntas relevantes y construir soluciones reales, preparándote para enfrentar los retos del mundo actual con criterio y seguridad.</p>
+      </div>
+      <div class="card">
+        <h3>Beneficio 2</h3>
+        <p>No solo aprendes teoría; llevas tus ideas a la práctica mediante proyectos que pueden transformar tu comunidad y mostrar tu talento desde el colegio.</p>
+      </div>
+      <div class="card">
+        <h3>Beneficio 3</h3>
+        <p>Mejoras tu capacidad para expresar ideas, argumentar y trabajar en equipo, habilidades clave para cualquier carrera y para la vida.</p>
+      </div>
+      <div class="card">
+        <h3>Beneficio 4</h3>
+        <p>Adquieres herramientas que te dan ventaja en la educación superior y en el mundo laboral, destacándote como una persona innovadora, creativa y propositiva.</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="section" id="presentacion-ingles">
+    <h2>¿Por qué aprender Comunicación y Procesos con nosotros?</h2>
+    <p>Estudiar Comunicación y Procesos en el Colegio Venecia te permite investigar, crear y desarrollar proyectos con impacto real. Fortaleces tu pensamiento crítico, tu capacidad de comunicar ideas y el trabajo en equipo, preparándote para el futuro académico y profesional mientras te conviertes en protagonista de tu propio aprendizaje.</p>
+  </section>
+
+  <section class="section" id="objetivos">
+    <h2>Objetivos de Aprendizaje</h2>
+    <ul>
+      <li>Desarrollar habilidades de investigación para formular preguntas, recolectar información y analizar problemáticas del entorno.</li>
+      <li>Fortalecer la comunicación oral y escrita, expresando ideas de manera clara, argumentada y creativa.</li>
+      <li>Diseñar y ejecutar proyectos que respondan a necesidades reales del contexto escolar o comunitario.</li>
+      <li>Fomentar el pensamiento crítico para interpretar información, tomar decisiones y proponer soluciones.</li>
+      <li>Promover el trabajo colaborativo, participando activamente en equipos y asumiendo roles con responsabilidad.</li>
+    </ul>
+  </section>
+
+  <footer class="footer" id="contacto">
+    <p>&copy; 2026 Educación Media Para El Siglo XXI EMS - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Scripts de Animaciones -->
+  <script src="animations.js"></script>
+</body>
+</html>
